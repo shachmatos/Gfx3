@@ -8,7 +8,8 @@ namespace Gfx3.GfxObjects
 {
     abstract class Shape
     {
-        Point3D center;
+        Point3D pivot;
+
 
         public double Scale { get; set; }
         public virtual double GetXc => throw new NotImplementedException();

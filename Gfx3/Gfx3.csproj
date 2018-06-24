@@ -47,6 +47,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GfxObjects\Box.cs" />
     <Compile Include="GfxObjects\Point3D.cs" />
     <Compile Include="GfxObjects\Shape.cs" />
     <Compile Include="MainWindow.cs">
@@ -56,6 +57,10 @@
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Projections\Oblique.cs" />
+    <Compile Include="Projections\Orthographic.cs" />
+    <Compile Include="Projections\Perspective.cs" />
+    <Compile Include="Projections\Projection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
