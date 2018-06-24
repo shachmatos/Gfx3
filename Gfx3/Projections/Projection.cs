@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Drawing;
 
 namespace Gfx3.Projections
 {
     abstract class Projection
     {
 
-        private int centerOfProjection;
+        public Point3D center { get; set; } = new Point3D(0, 0, -10);
 
 
         /// <summary>
@@ -19,6 +19,6 @@ namespace Gfx3.Projections
         /// </summary>
         /// <param name="points"></param>
         /// <returns></returns>
-        public abstract Point[] translate(Point3D[] points);
+        public abstract List<Point> Translate(Point3D[] points);
     }
 }
