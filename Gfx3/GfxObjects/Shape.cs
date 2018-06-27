@@ -4,18 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/**
+ * Made By:
+ *  Yftah Livny - 066633744
+ *  Edan Hauon - 305249187
+ */
+
 namespace Gfx3.GfxObjects
 {
+    /// <summary>
+    /// Base class for shapes
+    /// </summary>
     abstract class Shape
     {
+        // Pivot (center) of a shape
         public Point3D Pivot { get; set; }
 
-        public double Scale { get; set; }
-        public virtual double GetXc => throw new NotImplementedException();
-        public virtual double GetYc => throw new NotImplementedException();
-        public virtual double GetZc => throw new NotImplementedException();
+        // Scale of a single shape
+        public double Scale { get; set; } = 1;
 
+        // Return points of a shape
         abstract public List<Point3D> GetPoints();
+
+        // return polygons of a shape
         abstract public List<Polygon3D> GetPolygons();
     }
 }

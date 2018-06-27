@@ -5,16 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using Gfx3.GfxObjects;
 
+/**
+ * Made By:
+ *  Yftah Livny - 066633744
+ *  Edan Hauon - 305249187
+ */
+
 namespace Gfx3.Transformations
 {
     abstract class Transformation
     {
-        //Parent class
+        /// <summary>
+        /// Perform an abstract transformation
+        /// </summary>
+        /// <param name="shape">Shape to transform</param>
+        /// <param name="transformVector">transform vector</param>
+        /// <returns>transformmed shape</returns>
         public abstract Shape Transform(Shape shape, Point3D transformVector);
 
+        /// <summary>
+        /// Perform a transformation around an alternative center (such as scene center rather than object center)
+        /// </summary>
+        /// <param name="shape"></param>
+        /// <param name="transformVector"></param>
+        /// <param name="transformCenter"></param>
+        /// <returns></returns>
+        public abstract Shape Transform(Shape shape, Point3D transformVector, Point3D transformCenter);
+
+
+        /// <summary>
+        /// General matrix multiplication method
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
         public static double[,] MultiplyMatrix(double[,] A, double[,] B)
         {
-            //This is a general matrix mult function
             int rA = A.GetLength(0);
             int cA = A.GetLength(1);
             int rB = B.GetLength(0);

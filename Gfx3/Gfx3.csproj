@@ -65,7 +65,7 @@
     <Compile Include="Projections\Projection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transformations\Rotate.cs" />
-    <Compile Include="Transformations\Shift.cs" />
+    <Compile Include="Transformations\Scale.cs" />
     <Compile Include="Transformations\Transformation.cs" />
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
