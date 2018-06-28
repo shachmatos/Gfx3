@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using Gfx3.GfxObjects;
+﻿using Gfx3.GfxObjects;
 using Gfx3.Transformations;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
 
 /**
  * Made By:

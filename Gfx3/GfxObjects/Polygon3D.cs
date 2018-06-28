@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
-using System.Threading.Tasks;
+using System.Linq;
 
 /**
  * Made By:
@@ -32,6 +29,11 @@ namespace Gfx3.GfxObjects
         /// Array of 3D Points (assuming counter-clockwise build)
         /// </summary>
         public Point3D[] Points { get; set; }
+
+        /// <summary>
+        /// Determines if polygon is visible or not
+        /// </summary>
+        public bool Visible { get; set; } = true;
 
         /// <summary>
         /// Constructor - without color specifications (defaults apply)

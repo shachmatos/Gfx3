@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-/**
+﻿/**
  * Made By:
  *  Yftah Livny - 066633744
  *  Edan Hauon - 305249187
@@ -88,14 +82,14 @@ namespace Gfx3.GfxObjects
         }
 
         /// <summary>
-        /// Operator overload for easy Cross Product
+        /// Operator overload for easy Dot Product
         /// </summary>
         /// <param name="a">Point 1</param>
         /// <param name="b">Point 2</param>
         /// <returns>Cross product between Point 1 and 2</returns>
-        public static Point3D operator *(Point3D a, Point3D b)
+        public static double operator *(Point3D a, Point3D b)
         {
-            return CrossProduct(a,b);
+            return a.x * b.x + a.y * b.y + a.z * b.z;
         }
     }
 }

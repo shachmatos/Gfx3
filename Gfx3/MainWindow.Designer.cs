@@ -40,13 +40,15 @@
             this.RotateYBtn = new System.Windows.Forms.ToolStripButton();
             this.RotateZBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.ScaleBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.ResetShapesBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toggleWireframeBtn = new System.Windows.Forms.ToolStripButton();
+            this.canvas = new System.Windows.Forms.PictureBox();
             this.toolChain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
             // toolChain
@@ -65,7 +67,9 @@
             this.toolStripLabel1,
             this.ScaleBtn,
             this.toolStripSeparator3,
-            this.toolStripButton1});
+            this.ResetShapesBtn,
+            this.toolStripSeparator4,
+            this.toggleWireframeBtn});
             this.toolChain.Location = new System.Drawing.Point(0, 0);
             this.toolChain.Name = "toolChain";
             this.toolChain.Size = new System.Drawing.Size(1264, 29);
@@ -126,8 +130,9 @@
             // 
             // rotationLabel
             // 
+            this.rotationLabel.Margin = new System.Windows.Forms.Padding(5);
             this.rotationLabel.Name = "rotationLabel";
-            this.rotationLabel.Size = new System.Drawing.Size(174, 26);
+            this.rotationLabel.Size = new System.Drawing.Size(174, 19);
             this.rotationLabel.Text = "Rotate (drag mouse on canvas):";
             // 
             // RotateXBtn
@@ -135,8 +140,9 @@
             this.RotateXBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.RotateXBtn.Image = ((System.Drawing.Image)(resources.GetObject("RotateXBtn.Image")));
             this.RotateXBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RotateXBtn.Margin = new System.Windows.Forms.Padding(5);
             this.RotateXBtn.Name = "RotateXBtn";
-            this.RotateXBtn.Size = new System.Drawing.Size(42, 26);
+            this.RotateXBtn.Size = new System.Drawing.Size(42, 19);
             this.RotateXBtn.Text = "X Axis";
             this.RotateXBtn.ToolTipText = "Rotate X Axis";
             this.RotateXBtn.Click += new System.EventHandler(this.RotateXBtn_Click);
@@ -146,8 +152,9 @@
             this.RotateYBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.RotateYBtn.Image = ((System.Drawing.Image)(resources.GetObject("RotateYBtn.Image")));
             this.RotateYBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RotateYBtn.Margin = new System.Windows.Forms.Padding(5);
             this.RotateYBtn.Name = "RotateYBtn";
-            this.RotateYBtn.Size = new System.Drawing.Size(42, 26);
+            this.RotateYBtn.Size = new System.Drawing.Size(42, 19);
             this.RotateYBtn.Text = "Y Axis";
             this.RotateYBtn.ToolTipText = "Rotate Y Axis";
             this.RotateYBtn.Click += new System.EventHandler(this.RotateYBtn_Click);
@@ -157,8 +164,9 @@
             this.RotateZBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.RotateZBtn.Image = ((System.Drawing.Image)(resources.GetObject("RotateZBtn.Image")));
             this.RotateZBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.RotateZBtn.Margin = new System.Windows.Forms.Padding(5);
             this.RotateZBtn.Name = "RotateZBtn";
-            this.RotateZBtn.Size = new System.Drawing.Size(42, 26);
+            this.RotateZBtn.Size = new System.Drawing.Size(42, 19);
             this.RotateZBtn.Text = "Z Axis";
             this.RotateZBtn.ToolTipText = "Rotate Z Axis";
             this.RotateZBtn.Click += new System.EventHandler(this.RotateZBtn_Click);
@@ -168,13 +176,21 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(5);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(167, 19);
+            this.toolStripLabel1.Text = "Scale (drag mouse on canvas):";
+            // 
             // ScaleBtn
             // 
             this.ScaleBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ScaleBtn.Image = ((System.Drawing.Image)(resources.GetObject("ScaleBtn.Image")));
             this.ScaleBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ScaleBtn.Margin = new System.Windows.Forms.Padding(5);
             this.ScaleBtn.Name = "ScaleBtn";
-            this.ScaleBtn.Size = new System.Drawing.Size(38, 26);
+            this.ScaleBtn.Size = new System.Drawing.Size(38, 19);
             this.ScaleBtn.Text = "Scale";
             this.ScaleBtn.Click += new System.EventHandler(this.ScaleBtn_Click);
             // 
@@ -183,48 +199,58 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 29);
             // 
-            // toolStripButton1
+            // ResetShapesBtn
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(79, 26);
-            this.toolStripButton1.Text = "Reset Shapes";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.ResetShapesBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.ResetShapesBtn.Image = ((System.Drawing.Image)(resources.GetObject("ResetShapesBtn.Image")));
+            this.ResetShapesBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ResetShapesBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.ResetShapesBtn.Name = "ResetShapesBtn";
+            this.ResetShapesBtn.Size = new System.Drawing.Size(79, 19);
+            this.ResetShapesBtn.Text = "Reset Shapes";
+            this.ResetShapesBtn.Click += new System.EventHandler(this.ResetShapesBtn_Click);
             // 
-            // pictureBox1
+            // toolStripSeparator4
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1239, 680);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 29);
             // 
-            // toolStripLabel1
+            // toggleWireframeBtn
             // 
-            this.toolStripLabel1.Margin = new System.Windows.Forms.Padding(5);
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(167, 19);
-            this.toolStripLabel1.Text = "Scale (drag mouse on canvas):";
+            this.toggleWireframeBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toggleWireframeBtn.Image = ((System.Drawing.Image)(resources.GetObject("toggleWireframeBtn.Image")));
+            this.toggleWireframeBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toggleWireframeBtn.Margin = new System.Windows.Forms.Padding(5);
+            this.toggleWireframeBtn.Name = "toggleWireframeBtn";
+            this.toggleWireframeBtn.Size = new System.Drawing.Size(105, 19);
+            this.toggleWireframeBtn.Text = "Toggle Wireframe";
+            this.toggleWireframeBtn.Click += new System.EventHandler(this.toggleWireframeBtn_Click);
+            // 
+            // canvas
+            // 
+            this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvas.Location = new System.Drawing.Point(13, 29);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(1239, 680);
+            this.canvas.TabIndex = 1;
+            this.canvas.TabStop = false;
+            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
+            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 721);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.canvas);
             this.Controls.Add(this.toolChain);
             this.Name = "MainWindow";
             this.Text = "Gfx Homework 3 - Yftah Livny 066633744 & Edan Hauon 305249187";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.toolChain.ResumeLayout(false);
             this.toolChain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +261,7 @@
         private System.Windows.Forms.ToolStrip toolChain;
         private System.Windows.Forms.ToolStripButton ProjectionObliqueBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox canvas;
         private System.Windows.Forms.ToolStripButton ProjectionParallelBtn;
         private System.Windows.Forms.ToolStripButton ProjectionPerspectiveBtn;
         private System.Windows.Forms.ToolStripLabel ProjectionLabel;
@@ -246,8 +272,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton ScaleBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton ResetShapesBtn;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton toggleWireframeBtn;
     }
 }
 

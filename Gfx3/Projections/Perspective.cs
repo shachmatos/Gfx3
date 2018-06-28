@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using Gfx3.GfxObjects;
 using Gfx3.Transformations;
@@ -25,7 +22,7 @@ namespace Gfx3.Projections
                 {
                     { 1 ,0 ,0 ,0 },
                     { 0, 1, 0, 0 },
-                    { 0, 0, 0, 0 },
+                    { 0, 0, 1, 0 },
                     { 0, 0, 0, 1 }
                 };
 
@@ -38,25 +35,26 @@ namespace Gfx3.Projections
         {
             // init result list
             List<Point> result = new List<Point>();
-
+            
             // for all 3D points project to 2D points
             foreach (Point3D p in points)
             {
                 // calculate denominator and S(z)
-                double denom = 1 + p.z / Math.Sqrt(Math.Pow(0 - center.x, 2) + Math.Pow(0 - center.y, 2) + Math.Pow(0 - center.z, 2));
+                //double denom = 1 + p.z / Math.Sqrt(Math.Pow(0 - center.x, 2) + Math.Pow(0 - center.y, 2) + Math.Pow(0 - center.z, 2));
+                double denom = 1 + p.z / -500;
                 double s = 1 / denom;
 
                 // update matrix for current translation
                 matrix[0, 0] = matrix[1,1] = s;
 
                 // create vector for multiplication
-                double[,] vec = { { p.x, p.y, 1, 1 } };
+                double[,] vec = { { p.x - center.x, p.y - center.y, p.z, 1 } };
 
                 // Execute matrix multiplication
                 double [,] result_vec = Transformation.MultiplyMatrix(vec, matrix);
 
                 // Add projected point to result list
-                result.Add(new Point(Convert.ToInt32(result_vec[0, 0]), Convert.ToInt32(result_vec[0, 1])));
+                result.Add(new Point(Convert.ToInt32(result_vec[0, 0] + center.x), Convert.ToInt32(result_vec[0, 1] + center.y)));
             }
             return result;
         }

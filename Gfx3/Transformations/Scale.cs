@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Gfx3.GfxObjects;
 
 /**
@@ -106,10 +103,16 @@ namespace Gfx3.Transformations
                 double[,] vec = { { p.x, p.y, p.z, 1 } };
                 double[,] new_vec = MultiplyMatrix(vec, matrix);
 
-                // update point
-                p.x = new_vec[0, 0];
-                p.y = new_vec[0, 1];
-                p.z = new_vec[0, 2];
+                // check result is not infinity or NaN
+                if (!(Double.IsInfinity(new_vec[0,0]) || Double.IsInfinity(new_vec[0, 1]) || Double.IsInfinity(new_vec[0, 2])) || 
+                    !(Double.IsNaN(new_vec[0, 0]) || Double.IsNaN(new_vec[0, 1]) || Double.IsNaN(new_vec[0, 2])))
+                {
+                    // update point
+                    p.x = new_vec[0, 0];
+                    p.y = new_vec[0, 1];
+                    p.z = new_vec[0, 2];
+                }
+
 
                 // move back to relative center
                 p.x += transformCenter.x;
